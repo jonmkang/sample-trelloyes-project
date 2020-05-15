@@ -2,18 +2,23 @@ import React from 'react';
 import List from './List';
 import './App.css'
 
+
 function App(props) {
-  const arrayOfLists = props.store.lists;
-  const objectOfCards = props.store.allCards;
-  const cardLists = arrayOfLists.map(list => list.cardIds.map(card => objectOfCards[card]))
-  const lists = arrayOfLists.map((list, i) => <List key={Math.random()} header={list.header} cards={cardLists[i]} />)
+
+  const arrayOfLists = props.lists;
+  const objectOfCards = props.allCards;
+  const cardLists = arrayOfLists.map(list => list.cardIds.map(card => objectOfCards[card]));
+  const listsToPrint = arrayOfLists.map((list, i) => <List key={Math.random()} header={list.header} cards={cardLists[i]} />);
 
   return (
     <main className='App'>
-      <header className="App-header"><h1>Trelloyes!</h1></header>
+      <header className="App-header">
+        <h1>Trelloyes!</h1>
+      </header>
       <div className='App-List'>
-          {lists}
+          {listsToPrint}
       </div>
+      
     </main>
   );
 }
