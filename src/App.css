@@ -3,8 +3,8 @@
     min-width: calc(100vw - 16px);
     background: #0079bf;
     padding: 8px;
-    flex-direction: column;
-    
+    flex-direction: row;
+  
   }
   
   .App-header h1 {
@@ -17,4 +17,5 @@
   .App-list {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
   }
